@@ -10,19 +10,28 @@ function App() {
           <p>Alterar</p>
         </div>
 
-        <div className='Header'>
+        <div className='Header' id='Header'>
           <div className='left_header'>
-            <img src="/static/images/header/logo-branco.svg" alt="Logo" className='Logo'/>
-            <p>Produtos</p>
+            <img src="/static/images/header/logo-branco.svg" alt="Logo" className='Logo' id='Logo'/>
+            <div className='exp_produtos'>
+              <p>Produtos</p>
+              <img src="/static/images/header/seta-baixo.svg" alt="Expandir Produtos" className='seta'/>
+            </div>
             <p>Lançamentos</p>
-            <p>Outlet</p>
+            <p style={{ color: '#B11B26' }}>Outlet</p>
           </div>
 
           <div className='right_header'>
-
+            <img src="/static/images/header/icone-search.svg" alt="Pesquisar" />
+            <img src="/static/images/header/icone-conta.svg" alt="Minha Conta" />
+            <img src="/static/images/header/icone-carrinho.svg" alt="Carrinho" style={{ width: '35px' }}/>
           </div>
         </div>
       </header>
+
+      <div className='Home'>
+        
+      </div>
     </div>
   );
 }
