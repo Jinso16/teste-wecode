@@ -1,14 +1,30 @@
 import React from 'react';
 import './App.scss';
-import { liberarFundo } from './utils';
+
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+import { fecharModal } from './utils';
+import { abrirModal } from './utils';
 import { salvarCEP } from './utils';
+import { fecharAbaProdutos } from './utils';
 
 function App() {
+  var settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="App">
-      <div id="modal1" className='fundo_modal' onClick={liberarFundo}></div>
+      <div id="modal1" className='fundo_modal' onClick={fecharModal}></div>
       <div id="modal2" className='alterar_cep_modal'>
-        <img src="/static/images/modal/close-btn.svg" alt="Fechar" onClick={liberarFundo}/>
+        <img src="/static/images/modal/close-btn.svg" alt="Fechar" onClick={fecharModal}/>
 
         <p>Personalize sua experiência e encontre produtos perto de você!</p>
 
@@ -67,14 +83,14 @@ function App() {
       <header>
         <div className='alterar_cep_header'>
           <p id='local_atual'>Você está em: São Paulo</p>
-          <p>Alterar</p>
+          <p onClick={abrirModal} style={ {textDecoration: 'underline'} }>Alterar</p>
         </div>
 
         <div className='Header' id='Header'>
           <div className='left_header'>
             <img src="/static/images/header/logo-branco.svg" alt="Logo" className='Logo' id='Logo'/>
             <div className='exp_produtos'>
-              <p>Produtos</p>
+              <p id='produtos'>Produtos</p>
               <img src="/static/images/header/seta-baixo.svg" alt="Expandir Produtos" className='seta'/>
             </div>
             <p>Lançamentos</p>
@@ -87,11 +103,30 @@ function App() {
             <img src="/static/images/header/icone-carrinho.svg" alt="Carrinho" style={{ width: '35px' }}/>
           </div>
         </div>
+
+        <div onClick={fecharAbaProdutos} className='fundo-produtos' id='fundo-produtos'></div>
+        <div className='div-produtos' id='div-produtos'>
+          <div className='produtos'>
+            <li data-img='img-cat1.svg' >Sapatos</li>
+            <li data-img='img-cat2.svg' >Scarpins</li>
+            <li data-img='img-cat3.svg' >Sandálias</li>
+            <li data-img='img-cat4.svg' >Botas</li>
+          </div>
+
+          <img id='prod-img' src="/static/images/produtos/img-cat1.svg" alt="Imagem da categoria" />
+        </div>
       </header>
 
-      <div className='Home'>
-        
-      </div>
+      <Slider {...settings}>
+        <div className='div-banner'>
+          <img src="/static/images/banner/banner-2.png" alt="" />
+        </div>
+
+        <div className='div-banner'>
+          <img src="/static/images/banner/banner-1.png" alt="" />
+        </div>
+      </Slider>
+      
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 export   function getProducts() {
      return new Promise((res) => {
           res([
@@ -24,13 +23,22 @@ export   function getProducts() {
      });
 }
 
-export function liberarFundo() {
+export function fecharModal() {
      document.body.style.overflow = ''
      const modal1 = document.getElementById('modal1')
      const modal2 = document.getElementById('modal2')
 
      modal1.style.display = 'none'
      modal2.style.display = 'none'
+}
+
+export function abrirModal() {
+     document.body.style.overflow = 'hidden'
+     const modal1 = document.getElementById('modal1')
+     const modal2 = document.getElementById('modal2')
+
+     modal1.style.display = 'flex'
+     modal2.style.display = 'flex'
 }
 
 export function salvarCEP() {
@@ -52,5 +60,14 @@ export function salvarCEP() {
      }
      else{alert("Preencha o Código postal")}
      
+}
+
+export function fecharAbaProdutos() {
+     const div = document.getElementById('div-produtos')
+     const fundo = document.getElementById('fundo-produtos')
+
+     div.style.display = 'none'
+     document.body.style.overflow = ''
+     fundo.style.display = 'none'
 }
 

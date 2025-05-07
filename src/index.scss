@@ -5,10 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: #F3AA9B;
-
-  height: 2000px;
 }
 
 code {
@@ -149,6 +145,7 @@ code {
 }
 
 header {
+  z-index: 5;
   position: fixed;
   width: 100%;
 
@@ -159,6 +156,9 @@ header {
     color: #ffffff;
 
     gap: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
 
     justify-content: center;
     align-items: center;
@@ -227,10 +227,55 @@ header {
       img {
         width: 20px;
         height: 20px;
+
+        cursor: pointer;
       }
     }
-    
+
     transition: .3s ease;
+  }
+
+  .fundo-produtos {
+    display: none;
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #000000;
+
+    opacity: 40%;
+  }
+
+  .div-produtos {
+    display: none;
+    height: 323px;
+
+    background-color: #ffffff;
+
+    padding: 24px 264px 24px 264px;
+
+    gap: 64px;
+
+    .produtos {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      li {
+        text-align: left;
+        margin: 0;
+
+        list-style: none;
+
+        cursor: pointer;
+      }
+
+      li:hover {
+        text-decoration: underline;
+
+      }
+    }
   }
 
   .inverso {
@@ -241,4 +286,21 @@ header {
       filter: invert(100%);
     }
   }
+}
+
+.slick-slider {
+  z-index: 0  ;
+
+  width: 100%;
+}
+
+.div-banner {
+  height: 980px;
+
+  width: 100%;
+
+  img {
+    padding-top: 38px;
+  }
+
 }
