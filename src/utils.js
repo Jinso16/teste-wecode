@@ -24,3 +24,33 @@ export   function getProducts() {
      });
 }
 
+export function liberarFundo() {
+     document.body.style.overflow = ''
+     const modal1 = document.getElementById('modal1')
+     const modal2 = document.getElementById('modal2')
+
+     modal1.style.display = 'none'
+     modal2.style.display = 'none'
+}
+
+export function salvarCEP() {
+     const cep = document.getElementById('cep').value
+     const cidade = document.getElementById('cidade').value
+     const estado = document.getElementById('estado').value
+
+     if (cep !== '') {
+          localStorage.setItem("cep", cep);
+          localStorage.setItem("city", cidade);
+          localStorage.setItem("state", estado);
+
+          document.body.style.overflow = ''
+          const modal1 = document.getElementById('modal1')
+          const modal2 = document.getElementById('modal2')
+
+          modal1.style.display = 'none'
+          modal2.style.display = 'none'
+     }
+     else{alert("Preencha o Código postal")}
+     
+}
+
