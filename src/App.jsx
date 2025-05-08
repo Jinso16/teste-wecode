@@ -174,7 +174,6 @@ function App() {
       <div>
         <Lancamentos />
       </div>
-      
     </div>
   );
 }
