@@ -1,15 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Open Sans", sans-serif;
 }
 
 .fundo_modal {
@@ -289,18 +288,280 @@ header {
 }
 
 .slick-slider {
+  display: flex;
+
+  overflow: visible !important;
+
+  justify-content: center;
+
   z-index: 0  ;
 
   width: 100%;
 }
 
+.slick-dots {
+  top: 970px;
+}
+
 .div-banner {
+  position: relative;
   height: 980px;
+
+  padding-top: 39px;
+
+  width: 100%;  
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  button {
+    height: 43px;
+    width: 150px;
+
+    position: absolute;
+    bottom: 6%; 
+    left: 50%;    
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    background-color: #ffffff1e;
+
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+
+    backdrop-filter: blur(16px);
+
+    box-shadow: 0px 4px 12px 0px #00000029;
+
+    font-family: "Open Sans", sans-serif;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+.Categorias {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: -5px;
+  padding: 56px 80px 64px 80px;
+  gap: 32px;
+
+  .text {
+    width: 100%;
+
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      text-align: left;
+    }
+  }
+
+  
+
+  .row-categorias {
+    display: flex;
+
+    gap: 16px;
+
+    .categoria {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 100%;
+        letter-spacing: 0px;
+  
+        text-align: left;
+
+        transition: .3s ease;
+      }
+
+      .img {
+        overflow: hidden;
+        width: 428px;
+        height: 462px;
+        border-radius: 4px;
+      }
+
+      img {
+        object-fit: cover;
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+
+        transition: .3s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+
+        p {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.Cards {
+  display: flex;
+
+  justify-content: center;
+
+  margin-left: -8px;
+
+  gap: 16px;
 
   width: 100%;
 
   img {
-    padding-top: 38px;
+    object-fit: cover;
+  }
+}
+
+.Lancamentos {
+  font-family: "Open Sans", sans-serif;
+  
+  color: #1D1D1D;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 48px 80px 56px 80px;
+
+  .text {
+    width: 100%;
+
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      text-align: left;
+    }
   }
 
+  .produtos {
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 16px;
+
+    .produto {
+
+      cursor: default;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 8px;
+
+      .img-card {
+        position: relative;
+
+        width: 339.2px;
+        height: 339.2px;
+    
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .fav {
+          position: absolute;
+          width: 32px;
+          height: 32px;
+
+          cursor: pointer;
+
+          right: 0;
+
+          margin: 10px 10px 0 0;
+        }
+
+        .vitrine {
+          position: absolute;
+          width: 32px;
+          height: 32px;
+
+          cursor: pointer;
+
+          bottom: 0;
+          right: 0;
+
+          margin: 0 10px 10px 0;
+        }
+
+        p {
+          position: absolute;
+          bottom: 0;
+          margin: 0 0 10px 10px;
+
+          font-size: 12px;
+          font-weight: 400;
+
+          color: #B11B26;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 300;
+
+        max-width: 330px;
+        text-align: left;
+      }
+
+      
+
+      .promo {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        h1 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 400;
+  
+          max-width: 330px;
+          text-align: left;
+        }
+
+        h2 {
+          margin: 0;
+          font-size: 12px;
+          font-weight: 300;
+
+          color: #8A8A8A;
+
+          text-decoration: line-through;
+  
+          max-width: 330px;
+          text-align: left;
+        }
+      }
+    }
+  }
 }

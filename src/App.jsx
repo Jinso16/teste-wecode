@@ -9,6 +9,7 @@ import { fecharModal } from './utils';
 import { abrirModal } from './utils';
 import { salvarCEP } from './utils';
 import { fecharAbaProdutos } from './utils';
+import Lancamentos from './Lancamentos';
 
 function App() {
   var settings = {
@@ -120,12 +121,59 @@ function App() {
       <Slider {...settings}>
         <div className='div-banner'>
           <img src="/static/images/banner/banner-2.png" alt="" />
+          <button>Conheça agora!</button>
         </div>
 
         <div className='div-banner'>
           <img src="/static/images/banner/banner-1.png" alt="" />
+          <button>Conheça agora!</button>
         </div>
       </Slider>
+
+      <div className='Categorias'>
+        <div className='text'>
+          <h1>Categorias</h1>
+        </div>
+
+        <div className='row-categorias'>
+          <div className='categoria'>
+            <div className='img'>
+              <img src="/static/images/produtos/img-cat4.svg" alt="Botas" />
+            </div>
+            <p>Botas</p>
+          </div>
+
+          <div className='categoria'>
+            <div className='img'>
+              <img src="/static/images/produtos/img-cat2.svg" alt="Scarpins" />
+            </div>
+            <p>Scarpins</p>
+          </div>
+
+          <div className='categoria'>
+            <div className='img'>
+              <img src="/static/images/produtos/img-cat3.svg" alt="Sapatilhas" />
+            </div>
+            <p>Sapatilhas</p>
+          </div>
+
+          <div className='categoria'>
+            <div className='img'>
+              <img src="/static/images/produtos/img-cat5.svg" alt="Sandalias" />
+            </div>
+            <p>Sandálias</p>
+          </div>
+        </div>
+      </div>
+
+      <div className='Cards'>
+        <img src="/static/images/banner/banner-3.svg" alt="Card 1"/>
+        <img src="/static/images/banner/banner-4.svg" alt="Card 2"/>
+      </div>
+
+      <div>
+        <Lancamentos />
+      </div>
       
     </div>
   );
