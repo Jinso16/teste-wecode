@@ -458,12 +458,134 @@ header {
 
   .produtos {
     display: flex;
+    position: relative;
 
     justify-content: center;
 
     width: 100%;
 
     gap: 16px;
+
+    .slick-prev {
+      font-size: 0;
+      line-height: 0;
+      position: absolute;
+
+      top: -43.5px;
+      right: 170px;
+
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      cursor: pointer;
+      color: white;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+
+    .slick-prev::before {
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1;
+      opacity: .75;
+      color: black;
+      -webkit-font-smoothing: antialiased;
+
+      content: '<';
+    }
+
+    .slick-next {
+      font-size: 0;
+      line-height: 0;
+      position: absolute;
+      top: -43.5px;
+      right: 10px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      cursor: pointer;
+      color: white;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+
+    .slick-next::before {
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1;
+      opacity: .75;
+      color: black;
+      -webkit-font-smoothing: antialiased;
+
+      content: '>';
+    }
+
+    .slick-dots {
+      position: absolute;
+      display: block;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: center;
+
+      top: -50px;
+      right: 60px;
+
+      li {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 0 -2px;
+        padding: 0;
+        cursor: pointer;
+
+        
+
+        button {
+          font-size: 0;
+          line-height: 0;
+          display: block;
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+          cursor: pointer;
+          color: transparent;
+          border: 0;
+          outline: none;
+          background: transparent;
+        }
+
+        button::before {
+          font-family: 'slick';
+          font-size: 24px;
+          line-height: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          content: '•';
+          text-align: center;
+          opacity: .25;
+          color: black;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+
+      .slick-active {
+        button::before {
+          opacity: .75;
+          color: black;
+        }
+      }
+    }
 
     .produto {
 
@@ -472,7 +594,7 @@ header {
       display: flex;
       flex-direction: column;
 
-      gap: 8px;
+      gap: 16px;
 
       .img-card {
         position: relative;
@@ -486,15 +608,34 @@ header {
         }
 
         .fav {
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+
           position: absolute;
           width: 32px;
           height: 32px;
+
+          background-color: #ffffff;
 
           cursor: pointer;
 
           right: 0;
 
           margin: 10px 10px 0 0;
+        }
+
+        .fav-heart {
+          display: block;
+          width: 14px;
+          height: 14px;
+        }
+
+        .fav-heart-fill {
+          display: none;
+          width: 14px;
+          height: 14px;
         }
 
         .vitrine {
@@ -523,7 +664,7 @@ header {
       }
 
       p {
-        margin: 0;
+        margin: 8px 0 8px 0;
         font-size: 16px;
         font-weight: 300;
 
@@ -564,4 +705,30 @@ header {
       }
     }
   }
+}
+
+.fundo-vitrine {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #000000;
+  opacity: 40%;
+}
+
+.vitrine-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+
+  z-index: 9999;
+  background-color: #ffffff;
+
+  width: 903px;
+  height: 433px;
 }

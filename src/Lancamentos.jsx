@@ -6,14 +6,31 @@ import Slider from "react-slick";
 
 export default function Lancamentos() {
     const [products, setProducts] = useState([]);
+    const [favoritos, setFavoritos] = useState({});
+    const [produtoSelecionado, setProdutoSelecionado] = useState(null);
 
     useEffect(() => {
         getProducts().then(setProducts);
     }, []);
 
+    const favoritarProduto = (id) => {
+        setFavoritos((prev) => ({
+          ...prev,
+          [id]: !prev[id]
+        }));
+    };
+
+    const abrirDetalhes = (product) => {
+        setProdutoSelecionado(product);
+    };
+    
+    const fecharDetalhes = () => {
+        setProdutoSelecionado(null);
+    };
+
     var settings = {
         dots: true,
-        arrows: false,
+        arrows: true,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
@@ -31,6 +48,7 @@ export default function Lancamentos() {
                 <Slider {...settings}>
                     {products.map((product) => {
                         const { name, image, price, id } = product;
+                        const isFavorito = favoritos[id];
                         const isDiscounted = price.isDiscount != null;
                         const discountPercent = isDiscounted
                             ? Math.round(((price.amount - price.isDiscount) / price.amount) * 100)
@@ -39,8 +57,17 @@ export default function Lancamentos() {
                         return (
                             <div className='produto' key={id}>
                                 <div className='img-card'>
-                                    <img className='fav' src="/static/images/favorito.svg" alt="Adicionar aos favoritos" />
-                                    <img className='vitrine' src="/static/images/vitrine.svg" alt="Adicionar a vitrine" />
+                                    <div className='fav'>
+                                        <img
+                                            className="fav-heart"
+                                            src={isFavorito ? "/static/images/heart-fill.svg" : "/static/images/heart.svg"}
+                                            alt="Adicionar aos favoritos"
+                                            onClick={() => favoritarProduto(id)}
+                                            style={{ cursor: 'pointer' }}
+                                        />
+                                    </div>
+
+                                    <img onClick={() => abrirDetalhes(product)} className='vitrine' src="/static/images/vitrine.svg" alt="Adicionar a vitrine" />
                                     {isDiscounted && <p>{discountPercent}% OFF</p>}
                                     <img src={image} alt={name} />
                                 </div>
@@ -62,6 +89,29 @@ export default function Lancamentos() {
                     })}
                 </Slider>
             </div>
+
+            {produtoSelecionado && (
+                <div>
+                    <div className='fundo-modal' onClick={fecharDetalhes}></div>
+                    <div className="vitrine-modal" onClick={(e) => e.stopPropagation()}>
+                        <h2>{produtoSelecionado.name}</h2>
+                        <img
+                        src={produtoSelecionado.image}
+                        alt={produtoSelecionado.name}
+                        />
+                        <p>
+                        Preço:{' '}
+                        <strong>
+                            {produtoSelecionado.price.isDiscount
+                            ? `R$ ${produtoSelecionado.price.isDiscount.toFixed(2).replace('.', ',')} (de R$ ${produtoSelecionado.price.amount.toFixed(2).replace('.', ',')})`
+                            : `R$ ${produtoSelecionado.price.amount.toFixed(2).replace('.', ',')}`}
+                        </strong>
+                        </p>
+                        <button onClick={fecharDetalhes}>Fechar</button>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 }

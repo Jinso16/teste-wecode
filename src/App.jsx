@@ -3,7 +3,7 @@ import './App.scss';
 
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+//import 'slick-carousel/slick/slick-theme.css';
 
 import { fecharModal } from './utils';
 import { abrirModal } from './utils';
@@ -170,7 +170,7 @@ function App() {
         <img src="/static/images/banner/banner-3.svg" alt="Card 1"/>
         <img src="/static/images/banner/banner-4.svg" alt="Card 2"/>
       </div>
-
+        
       <div>
         <Lancamentos />
       </div>
