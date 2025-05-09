@@ -83,3 +83,23 @@ export function fecharAbaProdutos() {
      fundo.style.display = 'none'
 }
 
+export function abrirCarrinho() {
+     const carrinho = document.getElementById('carrinho')
+     const fundo = document.getElementById('fundo-carrinho')
+
+     document.body.style.overflow = 'hidden'
+
+     carrinho.classList.add('carrinho-open')
+     fundo.style.display = 'block'
+}
+
+export function fecharCarrinho() {
+     const carrinho = document.getElementById('carrinho')
+     const fundo = document.getElementById('fundo-carrinho')
+
+     document.body.style.overflow = ''
+
+     carrinho.classList.remove('carrinho-open')
+     fundo.style.display = 'none'
+}
+

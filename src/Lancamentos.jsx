@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getProducts } from './utils';
+import { abrirCarrinho } from './utils';
 
 import Slider from "react-slick";
 
@@ -8,6 +9,8 @@ export default function Lancamentos() {
     const [products, setProducts] = useState([]);
     const [favoritos, setFavoritos] = useState({});
     const [produtoSelecionado, setProdutoSelecionado] = useState(null);
+    const [tamanhoSelecionado, setTamanhoSelecionado] = useState(null);
+    const tamanhos = [34, 35, 36, 37, 38, 39, 40];
 
     useEffect(() => {
         getProducts().then(setProducts);
@@ -22,11 +25,23 @@ export default function Lancamentos() {
 
     const abrirDetalhes = (product) => {
         setProdutoSelecionado(product);
+        document.body.style.overflow = 'hidden'
     };
     
     const fecharDetalhes = () => {
         setProdutoSelecionado(null);
+        document.body.style.overflow = ''
     };
+
+    const addItem = () => {
+        const item = document.getElementById('num-items')
+
+        localStorage.setItem("itens", +localStorage.getItem("itens")+1)
+        item.textContent = localStorage.getItem("itens")
+        fecharDetalhes()
+
+        abrirCarrinho()
+    }
 
     var settings = {
         dots: true,
@@ -57,12 +72,11 @@ export default function Lancamentos() {
                         return (
                             <div className='produto' key={id}>
                                 <div className='img-card'>
-                                    <div className='fav'>
+                                    <div onClick={() => favoritarProduto(id)} className='fav'>
                                         <img
                                             className="fav-heart"
                                             src={isFavorito ? "/static/images/heart-fill.svg" : "/static/images/heart.svg"}
                                             alt="Adicionar aos favoritos"
-                                            onClick={() => favoritarProduto(id)}
                                             style={{ cursor: 'pointer' }}
                                         />
                                     </div>
@@ -92,22 +106,50 @@ export default function Lancamentos() {
 
             {produtoSelecionado && (
                 <div>
-                    <div className='fundo-modal' onClick={fecharDetalhes}></div>
+                    <div className='fundo-vitrine' onClick={fecharDetalhes}></div>
                     <div className="vitrine-modal" onClick={(e) => e.stopPropagation()}>
-                        <h2>{produtoSelecionado.name}</h2>
                         <img
                         src={produtoSelecionado.image}
                         alt={produtoSelecionado.name}
                         />
-                        <p>
-                        Preço:{' '}
-                        <strong>
-                            {produtoSelecionado.price.isDiscount
-                            ? `R$ ${produtoSelecionado.price.isDiscount.toFixed(2).replace('.', ',')} (de R$ ${produtoSelecionado.price.amount.toFixed(2).replace('.', ',')})`
-                            : `R$ ${produtoSelecionado.price.amount.toFixed(2).replace('.', ',')}`}
-                        </strong>
-                        </p>
-                        <button onClick={fecharDetalhes}>Fechar</button>
+                        
+                        <div className='produto'>
+                            <h2>{produtoSelecionado.name}</h2>
+
+                            <div className='tamanhos'>
+                                <p>
+                                    {tamanhoSelecionado
+                                    ? `Tamanho: ${tamanhoSelecionado}`
+                                    : 'Tamanho:'}
+                                </p>
+                                <div>
+                                    {tamanhos.map((tam) => (
+                                        <label
+                                            key={tam}
+                                            className={`tamanho ${tamanhoSelecionado === tam ? 'ativo' : ''}`}
+                                        >
+                                            <p>{tam}</p>
+                                            <input
+                                                type="radio"
+                                                name="tam"
+                                                value={tam}
+                                                onChange={() => setTamanhoSelecionado(tam)}
+                                                hidden
+                                            />
+                                        </label>
+                                    ))}
+
+                                    <img src="static/images/sem-tamanho.svg" alt="" />
+                                </div>
+                            </div>
+
+                            <div onClick={ addItem } className='button'>
+                                <p>Adicionar ao carrinho</p>
+                                <img src="static/images/vitrine-no-back.svg" alt="" />
+                            </div>
+                        </div>
+
+                        <img className='close' onClick={fecharDetalhes} src="/static/images/modal/close-btn.svg" alt="Fechar Modal" />
                     </div>
                 </div>
             )}

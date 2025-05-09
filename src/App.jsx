@@ -9,6 +9,9 @@ import { fecharModal } from './utils';
 import { abrirModal } from './utils';
 import { salvarCEP } from './utils';
 import { fecharAbaProdutos } from './utils';
+import { abrirCarrinho } from './utils';
+import { fecharCarrinho } from './utils';
+
 import Lancamentos from './Lancamentos';
 
 function App() {
@@ -18,6 +21,15 @@ function App() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  var settings2 = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
     slidesToScroll: 1,
   };
 
@@ -101,7 +113,10 @@ function App() {
           <div className='right_header'>
             <img src="/static/images/header/icone-search.svg" alt="Pesquisar" />
             <img src="/static/images/header/icone-conta.svg" alt="Minha Conta" />
-            <img src="/static/images/header/icone-carrinho.svg" alt="Carrinho" style={{ width: '35px' }}/>
+            <div onClick={abrirCarrinho} className='sacola'>
+              <img src="/static/images/header/icone-carrinho.svg" alt="Carrinho"/>
+              <h3 id='num-items' className='itens'>{localStorage.getItem("itens")}</h3>
+            </div>
           </div>
         </div>
 
@@ -118,17 +133,52 @@ function App() {
         </div>
       </header>
 
-      <Slider {...settings}>
-        <div className='div-banner'>
-          <img src="/static/images/banner/banner-2.png" alt="" />
-          <button>Conheça agora!</button>
+      <div id='fundo-carrinho' className='fundo-carrinho'></div>
+      <div id='carrinho' className='Carrinho'>
+        <div className='carrinho-top'>
+          <div className='carrinho-header'>
+            <h1>Carrinho</h1>
+            <img onClick={fecharCarrinho} src="static/images/modal/close-btn.svg" alt="" />
+          </div>
+
+          <img src="static/images/card-produto.svg" alt="" />
         </div>
 
-        <div className='div-banner'>
-          <img src="/static/images/banner/banner-1.png" alt="" />
-          <button>Conheça agora!</button>
+        <div className='carrinho-bottom'>
+          <div className='info'>
+            <p>Subtotal</p>
+            <p>R$ 1055,89</p>
+          </div>
+
+          <div className='info'>
+            <p>Descontos</p>
+            <p style={{color: '#B11B26'}}>-R$ 191,62</p>
+          </div>
+
+          <div className='info'>
+            <p>Total</p>
+            <p>R$ 864,27</p>
+          </div>
+
+          <button>Finalizar pedido</button>
+
+          <h2 onClick={fecharCarrinho} >Continuar comprando</h2>
         </div>
-      </Slider>
+      </div>
+
+      <div className='banner'>
+        <Slider {...settings}>
+          <div className='div-banner'>
+            <img src="/static/images/banner/banner-2.png" alt="" />
+            <button>Conheça agora!</button>
+          </div>
+
+          <div className='div-banner'>
+            <img src="/static/images/banner/banner-1.png" alt="" />
+            <button>Conheça agora!</button>
+          </div>
+        </Slider>
+      </div>
 
       <div className='Categorias'>
         <div className='text'>
@@ -173,6 +223,54 @@ function App() {
         
       <div>
         <Lancamentos />
+      </div>
+
+      <div className='conheca-mais'>
+        <div className='title'>
+          <h1>Conheça mais</h1>
+          <p>Fique por dentro de tudo que acontece na Bebecê.</p>
+        </div>
+
+        <div className='blog'>
+
+          <Slider {...settings2}>
+            <div className='post'>
+              <img src="/static/images/blog/blog-2.svg" alt="" />
+
+              <h1>É AMANHÃ</h1>
+              <p>SIMPLE and TRUE: lançamento da nova coleção Outono Inverno 2024 da Bebecê ❤️</p>
+              <h3>Saiba mais!</h3>
+            </div>
+
+            <div className='post'>
+              <img src="/static/images/blog/blog-3.svg" alt="" />
+
+              <h1>NOVO LOGO, MESMA ESSÊNCIA.</h1>
+              <p>Trazendo conforto através das linhas finas e grossas + uma paleta de cores vibrante e cheia de atitude, o resultado é um visual que traduz nossa essência: autêntica e surpreendente!</p>
+              <h3>Saiba mais!</h3>
+            </div>
+
+            <div className='post'>
+              <img src="/static/images/blog/blog-1.svg" alt="" />
+
+              <h1>DESCUBRA O GLAMOUR EM CADA PASSO.</h1>
+              <p>Quer brilhar ainda mais neste inverno sem abrir mão do conforto? Esta mule é perfeita para você. ✨</p>
+              <h3>Saiba mais!</h3>
+            </div>
+          </Slider>
+
+        </div>
+      </div>
+
+      <div className='div-cupom'>
+        <div className='text'>
+          <p>Cadastre-se e receba </p><p style={{fontWeight: '600'}}> 10% OFF </p><p> na sua primeira compra!</p>
+        </div>
+
+        <div className='inputs'>
+          <input type="email" name="" id="" placeholder='Digite seu e-mail'/>
+          <button>ENVIAR</button>
+        </div>
       </div>
     </div>
   );
