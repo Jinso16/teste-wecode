@@ -9,6 +9,10 @@ body {
   color: #1D1D1D;
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 code {
   font-family: "Open Sans", sans-serif;
 }
