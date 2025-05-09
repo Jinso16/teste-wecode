@@ -507,8 +507,6 @@ header {
 
   justify-content: center;
 
-  margin-left: -8px;
-
   gap: 16px;
 
   width: 100%;
@@ -1319,8 +1317,16 @@ header {
     font-weight: 400;
   }
 
-  .inputs {
+  .text2 {
+    color: #1D1D1D;
+    display: none;
+    gap: 6px;
 
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .inputs {
     display: flex;
     gap: 16px;
     
@@ -1349,6 +1355,101 @@ header {
       width: 300px;
       border: none;
       background-color: #B11B26;
+
+      cursor: pointer;
+    }
+  }
+
+  .cupom-ativo {
+    display: none;
+
+    .cupom {
+      width: 212px;
+
+      color: #B11B26;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+
+      background-color: #ffffff;
+
+      border-radius: 1000px 0 0 1000px;
+      border: 1px solid #8A8A8A;
+      border-right: 1px solid #B11B26;
+      border-style:dashed;
+
+      padding-left: 10px;
+    }
+
+    button {
+      width: 144px;
+
+      color: #ffffff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: underline;
+
+      background-color: #B11B26;
+
+      border-radius: 0 1000px 1000px 0  ;
+      border: none;
+    }
+  }
+}
+
+footer {
+  display: flex;
+
+  height: 424px;
+
+  background-color: #B11B26;
+
+  align-items: center;
+  justify-content: space-between;
+
+  .footer-right {
+    display: flex;
+
+    width: 100%;
+
+    gap: 80px;
+
+    font-family: "Open Sans", sans-serif;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #EEEEEE;
+
+    .redes {
+      display: flex;
+      gap: 24px;
+
+      cursor: pointer;
+    }
+
+    .infos {
+      display: flex;
+      flex-direction: column;
+
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+
+      cursor: normal;
+    }
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 400;
+
+      text-decoration: underline;
 
       cursor: pointer;
     }

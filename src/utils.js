@@ -103,3 +103,27 @@ export function fecharCarrinho() {
      fundo.style.display = 'none'
 }
 
+export function enviarNewsletter() {
+     const div = document.getElementById('inputs-cupom')
+     const pos_div = document.getElementById('cupom-ativo')
+     const input = document.getElementById('input-email')
+
+     const txt1 = document.getElementById('text-cupom')
+     const txt2 = document.getElementById('text2-cupom')
+
+     console.log("teste")
+
+     if (input.value !== "") {
+          div.style.display = 'none'
+          pos_div.style.display = 'flex'
+          
+          txt1.style.display = 'none'
+          txt2.style.display = 'flex'
+     }
+}
+
+export function copiado() {
+     const btn = document.getElementById('btn-copiar')
+
+     btn.textContent = 'Copiado'
+}

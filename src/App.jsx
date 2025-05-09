@@ -11,6 +11,8 @@ import { salvarCEP } from './utils';
 import { fecharAbaProdutos } from './utils';
 import { abrirCarrinho } from './utils';
 import { fecharCarrinho } from './utils';
+import { enviarNewsletter } from './utils';
+import { copiado } from './utils';
 
 import Lancamentos from './Lancamentos';
 
@@ -169,12 +171,12 @@ function App() {
       <div className='banner'>
         <Slider {...settings}>
           <div className='div-banner'>
-            <img src="/static/images/banner/banner-2.png" alt="" />
+            <img src="/static/images/banner/banner-2.webp" alt="" />
             <button>Conheça agora!</button>
           </div>
 
           <div className='div-banner'>
-            <img src="/static/images/banner/banner-1.png" alt="" />
+            <img src="/static/images/banner/banner-1.webp" alt="" />
             <button>Conheça agora!</button>
           </div>
         </Slider>
@@ -263,15 +265,52 @@ function App() {
       </div>
 
       <div className='div-cupom'>
-        <div className='text'>
+        <div id='text-cupom' className='text'>
           <p>Cadastre-se e receba </p><p style={{fontWeight: '600'}}> 10% OFF </p><p> na sua primeira compra!</p>
         </div>
 
-        <div className='inputs'>
-          <input type="email" name="" id="" placeholder='Digite seu e-mail'/>
-          <button>ENVIAR</button>
+        <div id='text2-cupom' className='text2'>
+          <p>Utilize o cupom abaixo e garanta seu desconto!</p>
+        </div>
+
+        <div id='inputs-cupom' className='inputs'>
+          <input type="email" name="" id="input-email" placeholder='Digite seu e-mail'/>
+          <button onClick={enviarNewsletter} >ENVIAR</button>
+        </div>
+
+        <div id='cupom-ativo' className='cupom-ativo'>
+          <div className='cupom'>
+            <p>BEMVINDA</p>
+          </div>
+          <button id='btn-copiar' onClick={copiado}>Copiar</button>
         </div>
       </div>
+
+      <footer>
+        <img src="/static/images/Logo-bege.svg" alt="Logo Bebece" />
+
+        <div className='footer-right'>
+          <div className='redes'>
+            <img src="/static/images/redes/instagram.svg" alt="intagram" />
+            <img src="/static/images/redes/facebook.svg" alt="facebook" />
+            <img src="/static/images/redes/pinterest.svg" alt="pinterest" />
+            <img src="/static/images/redes/twitter.svg" alt="twitter" />
+            <img src="/static/images/redes/tik-tok.svg" alt="tik-tok" />
+          </div>
+          <div className='infos'>
+            <h1>Sobre a empresa</h1>
+            <p>Quem somos</p>
+            <p>Fale conosco</p>
+          </div>
+          <div className='infos'>
+            <h1>Políticas</h1>
+            <p>Política de Privacidade</p>
+            <p>Termos de Uso</p>
+            <p>Política de Entrega</p>
+            <p>Política de Cupom e Descontos</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
