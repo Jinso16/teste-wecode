@@ -1502,6 +1502,10 @@ footer {
     } 
   }
 
+  .Carrinho {
+    width: 85vw;
+  }
+
   .alterar_cep_modal {
     top: 50vh;
     left: 50vw;
@@ -1530,6 +1534,195 @@ footer {
 
     .div-banner {
       height: 90vh;
+    }
+
+    .slick-dots {
+      top: 90vh;
+    }
+  }
+
+  .mobile {
+    width: 100vw;
+
+    .Lancamentos {
+      padding: 32px 16px 48px 16px;
+
+      h1 {
+        font-size: 16px;
+      }
+
+      .produtos {
+
+        .produto {
+
+          .img-card {
+            height: 220px;
+            width: 220px;
+          }
+
+          p {
+              font-size: 12px;
+              max-width: 200px;
+            }
+
+          .promo {
+            h1 {
+              font-size: 14px;
+            }
+
+            h2 {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .Categorias {
+    padding: 32px 16px;
+
+    gap: 16px;
+
+    .text {
+      h1 {
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    .row-categorias {
+      width: 100%;
+
+      .categoria {
+
+        width: none;
+
+        .img {
+          width: 135px;
+          height: 175px;
+        }
+      }
+    }
+  }
+
+  .Cards {
+    flex-direction: column;
+    width: 100vw;
+    gap: 8px;
+  }
+
+  .conheca-mais {
+    padding: 32px 16px 68px 16px;
+
+    height: unset;
+
+    .title {
+
+      h1 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    .blog {
+      .post {
+        img {
+          width: 100%;
+        }
+
+        h1 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+
+        h3 {
+          font-size: 12px;
+        }
+      }
+
+      .slick-dots {
+        top: 42vh;
+        right: 0px;
+      }
+    }
+  }
+
+  .div-cupom {
+    height: unset;
+
+    flex-direction: column;
+
+    padding: 32px 16px;
+
+    gap: 32px;
+
+    .text {
+      p {
+        margin: 0;
+      }
+    }
+
+    .text2 {
+      p {
+        margin: 0;
+      }
+    }
+
+    .inputs {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+    flex-direction: column;
+
+    padding: 24px 0 64px 0;
+
+    height: unset;
+
+    gap: 64px;
+
+    img {
+      width: 100%;
+    }
+
+    .footer-right {
+      flex-direction: column;
+
+      gap: 64px;
+    }
+  }
+
+  .vitrine-modal {
+    flex-direction: column;
+
+    width: 88vw;
+    height: unset;
+
+    img {
+      height: unset;
+    }
+
+    .produto {
+      width: unset;
+      padding: 0 16px 24px 16px;
+
+      .tamanhos {
+        div {
+          flex-wrap: wrap;
+        }
+      }
     }
   }
 }
