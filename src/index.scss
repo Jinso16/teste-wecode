@@ -62,7 +62,7 @@ code {
 
   img {
     position: absolute;
-    
+
     right: 0;
     top: 0;
 
@@ -133,10 +133,12 @@ code {
     display: flex;
     flex-direction: column;
 
-    width: 100%;  
+    width: 100%;
   }
 
   button {
+    font-family: "Open Sans", sans-serif;
+
     background-color: #B11B26;
     color: #ffffff;
 
@@ -216,7 +218,7 @@ header {
           margin-top: 2px;
         }
       }
-      
+
       .Logo {
         height: 32px;
       }
@@ -315,7 +317,7 @@ header {
 
   justify-content: center;
 
-  z-index: 0  ;
+  z-index: 0;
 
   width: 100%;
 }
@@ -345,7 +347,7 @@ header {
       padding: 0;
       cursor: pointer;
 
-      
+
 
       button {
         font-size: 0;
@@ -393,7 +395,7 @@ header {
 
   padding-top: 39px;
 
-  width: 100%;  
+  width: 100%;
 
   img {
     object-fit: cover;
@@ -406,8 +408,8 @@ header {
     width: 150px;
 
     position: absolute;
-    bottom: 6%; 
-    left: 50%;    
+    bottom: 6%;
+    left: 50%;
     transform: translateX(-50%);
     padding: 8px 20px;
     background-color: #ffffff1e;
@@ -449,7 +451,7 @@ header {
     }
   }
 
-  
+
 
   .row-categorias {
     display: flex;
@@ -467,7 +469,7 @@ header {
         font-weight: 300;
         line-height: 100%;
         letter-spacing: 0px;
-  
+
         text-align: left;
 
         transition: .3s ease;
@@ -518,7 +520,7 @@ header {
 
 .Lancamentos {
   font-family: "Open Sans", sans-serif;
-  
+
   color: #1D1D1D;
 
   display: flex;
@@ -628,7 +630,7 @@ header {
         padding: 0;
         cursor: pointer;
 
-        
+
 
         button {
           font-size: 0;
@@ -683,7 +685,7 @@ header {
 
         width: 339.2px;
         height: 339.2px;
-    
+
         img {
           width: 100%;
           height: 100%;
@@ -754,7 +756,7 @@ header {
         text-align: left;
       }
 
-      
+
 
       .promo {
         display: flex;
@@ -767,7 +769,7 @@ header {
           margin: 0;
           font-size: 16px;
           font-weight: 400;
-  
+
           max-width: 330px;
           text-align: left;
         }
@@ -780,7 +782,7 @@ header {
           color: #8A8A8A;
 
           text-decoration: line-through;
-  
+
           max-width: 330px;
           text-align: left;
         }
@@ -822,7 +824,7 @@ header {
     height: 100%;
   }
 
-  
+
 
   .produto {
     font-family: "Open Sans", sans-serif;
@@ -838,7 +840,7 @@ header {
     gap: 32px;
     padding-right: 32px;
 
-    h2 {  
+    h2 {
       font-weight: 300;
       font-size: 18px;
 
@@ -1009,7 +1011,7 @@ header {
       justify-content: space-between;
       align-items: center;
 
-      h1{
+      h1 {
         margin: 0;
 
         font-family: "Open Sans", sans-serif;
@@ -1105,7 +1107,7 @@ header {
   font-family: "Open Sans", sans-serif;
 
   .title {
-    
+
     text-align: left;
 
     h1 {
@@ -1214,7 +1216,7 @@ header {
         padding: 0;
         cursor: pointer;
 
-        
+
 
         button {
           font-size: 0;
@@ -1271,7 +1273,7 @@ header {
 
         margin: 8px 0;
       }
-      
+
       p {
         font-size: 16px;
         font-weight: 300;
@@ -1329,7 +1331,7 @@ header {
   .inputs {
     display: flex;
     gap: 16px;
-    
+
     input {
       font-family: "Open Sans", sans-serif;
       font-size: 12px;
@@ -1338,7 +1340,7 @@ header {
 
       padding: 12px 24px;
 
-      border: 1px solid #CECECE ;
+      border: 1px solid #CECECE;
     }
 
     input:focus {
@@ -1376,7 +1378,7 @@ header {
       border-radius: 1000px 0 0 1000px;
       border: 1px solid #8A8A8A;
       border-right: 1px solid #B11B26;
-      border-style:dashed;
+      border-style: dashed;
 
       padding-left: 10px;
     }
@@ -1392,7 +1394,7 @@ header {
 
       background-color: #B11B26;
 
-      border-radius: 0 1000px 1000px 0  ;
+      border-radius: 0 1000px 1000px 0;
       border: none;
     }
   }
@@ -1452,6 +1454,82 @@ footer {
       text-decoration: underline;
 
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 100vw;
+
+    .Header {
+      padding: 0 16px;
+      height: 55px;
+
+      .exp_produtos {
+        position: absolute;
+        top: -700px;
+        display: none;
+      }
+
+      .left_header {
+        gap: 25px;
+
+        img {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      .mid_header {
+        display: flex;
+  
+        align-items: center;
+  
+        .Logo {
+          height: 24px;
+        }
+      }
+
+      .right_header {
+        
+        img {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+    } 
+  }
+
+  .alterar_cep_modal {
+    top: 50vh;
+    left: 50vw;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    width: 70vw;
+
+    
+
+    p {
+      text-align: left;
+    }
+
+    .cidade {
+      gap: 8px;
+    }
+
+    .estado {
+      gap: 8px;
+    }
+  }
+
+  .banner {
+    width: 100vw;
+
+    .div-banner {
+      height: 90vh;
     }
   }
 }
