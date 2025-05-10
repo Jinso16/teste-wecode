@@ -127,3 +127,37 @@ export function copiado() {
 
      btn.textContent = 'Copiado'
 }
+
+export function openMenu() {
+     const div = document.getElementById('menu')
+     const fundo = document.getElementById('fundo-menu')
+
+     document.body.style.overflow = 'hidden'
+
+     div.classList.add('menu-open')
+     fundo.style.display = 'block'
+}
+
+export function closeMenu() {
+     const div = document.getElementById('menu')
+     const fundo = document.getElementById('fundo-menu')
+
+     document.body.style.overflow = ''
+
+     div.classList.remove('menu-open')
+     fundo.style.display = 'none'
+}
+
+export function openSapatos() {
+     const div = document.getElementById('option-sapatos')
+     const seta = document.getElementById('seta-sapatos')
+
+     if (div.style.display === 'none') {
+          div.style.display = 'flex'
+          seta.style.rotate = '90deg'
+     }
+     else {
+          div.style.display = 'none'
+          seta.style.rotate = '0deg'
+     }
+}

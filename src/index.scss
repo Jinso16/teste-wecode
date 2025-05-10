@@ -1502,8 +1502,105 @@ footer {
     } 
   }
 
+  .fundo-menu {
+    display: none;
+
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 10;
+
+    background-color: #000000;
+
+    opacity: 40%;
+
+    top: 0;
+  }
+
+  .menu {
+    position: fixed;
+
+    font-family: "Open Sans", sans-serif;
+
+    width: 83vw;
+    height: 100vh;
+
+    z-index: 11;
+
+    background-color: #ffffff;
+
+    top: 0;
+    left: -83vw;
+
+    .header-menu {
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 16px;
+    }
+
+    .banner-menu {
+      width: 100%;
+      height: 120px;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+    }
+
+    .menu-bottom {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: left;
+
+      padding: 24px 16px;
+
+      gap: 24px;
+
+      p {
+        text-align: left;
+
+        margin: 0;
+      }
+
+      .option {
+        display: flex;
+
+        justify-content: space-between;
+      }
+
+      .option-sapatos {
+        display: none;
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding-left: 12px;
+
+        margin-top: -12px;
+
+        p {
+          font-weight: 300;
+        }
+      }
+    }
+
+    transition: 0.5s ease;
+  }
+
+  .menu-open {
+    left: 0;
+  }
+
   .Carrinho {
-    width: 85vw;
+    width: 83vw;
   }
 
   .alterar_cep_modal {
@@ -1513,8 +1610,6 @@ footer {
     transform: translateX(-50%) translateY(-50%);
 
     width: 70vw;
-
-    
 
     p {
       text-align: left;
@@ -1547,6 +1642,8 @@ footer {
     .Lancamentos {
       padding: 32px 16px 48px 16px;
 
+      gap: 8px;
+
       h1 {
         font-size: 16px;
       }
@@ -1557,15 +1654,27 @@ footer {
 
           .img-card {
             height: 220px;
-            width: 220px;
+            width: 100%;
+
+            .fav {
+              right: 90px;
+            }
+
+            .vitrine {
+              right: 90px;
+            }
           }
 
           p {
               font-size: 12px;
               max-width: 200px;
+
+              margin-left: 21vw;
             }
 
           .promo {
+            margin-left: 21vw;
+
             h1 {
               font-size: 14px;
             }
@@ -1599,8 +1708,12 @@ footer {
         width: none;
 
         .img {
-          width: 135px;
-          height: 175px;
+          width: 90%;
+          height: 250px;
+        }
+
+        p {
+          margin: 8px 0;
         }
       }
     }

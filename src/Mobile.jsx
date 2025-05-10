@@ -9,6 +9,9 @@ import { abrirCarrinho } from './utils';
 import { fecharCarrinho } from './utils';
 import { enviarNewsletter } from './utils';
 import { copiado } from './utils';
+import { openSapatos } from "./utils";
+import { openMenu } from "./utils";
+import { closeMenu } from "./utils"; 
 
 import LancamentosMobile from './LancamentosMobile';
 
@@ -108,7 +111,7 @@ export default function Desktop() {
 
                 <div className='Header' id='Header'>
                     <div className='left_header'>
-                        <img src="/static/images/header/menu.svg" alt="" />
+                        <img onClick={openMenu} src="/static/images/header/menu.svg" alt="" />
                         <img src="/static/images/header/icone-search.svg" alt="Pesquisar" />
 
                         <div className='exp_produtos'>
@@ -142,6 +145,53 @@ export default function Desktop() {
                     <img id='prod-img' src="/static/images/produtos/img-cat1.svg" alt="Imagem da categoria" />
                 </div>
             </header>
+
+            <div id="fundo-menu" className="fundo-menu"></div>
+            <div id="menu" className="menu">
+                <div className="header-menu">
+                    <img src="/static/images/header/logo-preto.svg" alt="Logo Bebece" />
+                    <img onClick={closeMenu} src="/static/images/modal/close-btn.svg" alt="Fechar Menu" />
+                </div>
+
+                <div className="banner-menu">
+                    <img src="/static/images/Menu/banner-menu.svg" alt="" />
+                </div>
+
+                <div className="menu-bottom">
+                    <p>Liquida</p>
+                    
+                    <div onClick={openSapatos} className="option">
+                        <p>Sapatos</p>
+                        <img id='seta-sapatos' src="/static/images/Menu/seta.svg" alt="" />
+                    </div>
+
+                    <div id="option-sapatos" className="option-sapatos">
+                        <p>Scarpins</p>
+                        <p>Mocassim</p>
+                        <p>Sapatilhas</p>
+                        <p>Mules</p>
+                        <p>Peep Toe</p>
+                        <p>Oxford</p>
+                    </div>
+
+                    <div className="option">
+                        <p>Sandálias</p>
+                        <img src="/static/images/Menu/seta.svg" alt="" />
+                    </div>
+
+                    <div className="option">
+                        <p>Botas</p>
+                        <img src="/static/images/Menu/seta.svg" alt="" />
+                    </div>
+
+                    <div className="option">
+                        <p>Tênis</p>
+                        <img src="/static/images/Menu/seta.svg" alt="" />
+                    </div>
+
+                    <p style={{color: '#B11B26'}}>Outlet</p>
+                </div>
+            </div>
 
             <div id='fundo-carrinho' className='fundo-carrinho'></div>
             <div id='carrinho' className='Carrinho'>
