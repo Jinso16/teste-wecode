@@ -193,7 +193,7 @@ export default function Desktop() {
                 </div>
             </div>
 
-            <div id='fundo-carrinho' className='fundo-carrinho'></div>
+            <div id='fundo-carrinho' onClick={fecharCarrinho} className='fundo-carrinho'></div>
             <div id='carrinho' className='Carrinho'>
                 <div className='carrinho-top'>
                     <div className='carrinho-header'>
