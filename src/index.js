@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
      function atualizarCep() {
           let cep = localStorage.getItem('cep')
 
-          if (cep !== '') {
+          if (cep !== null) {
                document.getElementById('local_atual').textContent = "Você está em: "+cep
           }
      }

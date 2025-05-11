@@ -60,48 +60,46 @@ export default function LancamentosMobile() {
             </div>
 
             <div className='produtos'>
-                <Slider {...settings}>
-                    {products.map((product) => {
-                        const { name, image, price, id } = product;
-                        const isFavorito = favoritos[id];
-                        const isDiscounted = price.isDiscount != null;
-                        const discountPercent = isDiscounted
-                            ? Math.round(((price.amount - price.isDiscount) / price.amount) * 100)
-                            : null;
+                {products.map((product) => {
+                    const { name, image, price, id } = product;
+                    const isFavorito = favoritos[id];
+                    const isDiscounted = price.isDiscount != null;
+                    const discountPercent = isDiscounted
+                        ? Math.round(((price.amount - price.isDiscount) / price.amount) * 100)
+                        : null;
 
-                        return (
-                            <div className='produto' style={{display: 'flex'}} key={id}>
-                                <div className='img-card'>
-                                    <div onClick={() => favoritarProduto(id)} className='fav'>
-                                        <img
-                                            className="fav-heart"
-                                            src={isFavorito ? "/static/images/heart-fill.svg" : "/static/images/heart.svg"}
-                                            alt="Adicionar aos favoritos"
-                                            style={{ cursor: 'pointer' }}
-                                        />
-                                    </div>
-
-                                    <img onClick={() => abrirDetalhes(product)} className='vitrine' src="/static/images/vitrine.svg" alt="Adicionar a vitrine" />
-                                    {isDiscounted && <p>{discountPercent}% OFF</p>}
-                                    <img src={image} alt={name} />
+                    return (
+                        <div className='produto' style={{display: 'flex'}} key={id}>
+                            <div className='img-card'>
+                                <div onClick={() => favoritarProduto(id)} className='fav'>
+                                    <img
+                                        className="fav-heart"
+                                        src={isFavorito ? "/static/images/heart-fill.svg" : "/static/images/heart.svg"}
+                                        alt="Adicionar aos favoritos"
+                                        style={{ cursor: 'pointer' }}
+                                    />
                                 </div>
 
-                                <p>{name}</p>
-
-                                <div className='promo'>
-                                    {isDiscounted ? (
-                                        <>
-                                            <h2>R$ {price.amount.toFixed(2).replace('.', ',')}</h2>
-                                            <h1>R$ {price.isDiscount.toFixed(2).replace('.', ',')}</h1>
-                                        </>
-                                    ) : (
-                                        <h1>R$ {price.amount.toFixed(2).replace('.', ',')}</h1>
-                                    )}
-                                </div>
+                                <img onClick={() => abrirDetalhes(product)} className='vitrine' src="/static/images/vitrine.svg" alt="Adicionar a vitrine" />
+                                {isDiscounted && <p>{discountPercent}% OFF</p>}
+                                <img src={image} alt={name} />
                             </div>
-                        );
-                    })}
-                </Slider>
+
+                            <p>{name}</p>
+
+                            <div className='promo'>
+                                {isDiscounted ? (
+                                    <>
+                                        <h2>R$ {price.amount.toFixed(2).replace('.', ',')}</h2>
+                                        <h1>R$ {price.isDiscount.toFixed(2).replace('.', ',')}</h1>
+                                    </>
+                                ) : (
+                                    <h1>R$ {price.amount.toFixed(2).replace('.', ',')}</h1>
+                                )}
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
 
             {produtoSelecionado && (

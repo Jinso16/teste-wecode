@@ -229,13 +229,17 @@ export default function Desktop() {
             <div className='banner'>
                 <Slider {...settings}>
                     <div className='div-banner'>
-                        <img src="/static/images/banner/banner-2.webp" alt="" />
+                        <img src="/static/images/banner/banner-mobile-1.svg" alt="" />
                         <button>Conheça agora!</button>
                     </div>
 
                     <div className='div-banner'>
-                        <img src="/static/images/banner/banner-1.webp" alt="" />
-                        <button>Conheça agora!</button>
+                        <img src="/static/images/banner/banner-mobile-3.svg" alt="" />
+                    </div>
+
+                    <div className='div-banner'>
+                        <img src="/static/images/banner/banner-mobile-2.svg" alt="" />
+                        <button>Ver coleção completa</button>
                     </div>
                 </Slider>
             </div>
@@ -246,35 +250,33 @@ export default function Desktop() {
                 </div>
 
                 <div className='row-categorias'>
-                    <Slider {...settings3}>
-                        <div className='categoria'>
-                            <div className='img'>
-                                <img src="/static/images/produtos/img-cat4.svg" alt="Botas" />
-                            </div>
-                            <p>Botas</p>
+                    <div className='categoria'>
+                        <div className='img'>
+                            <img src="/static/images/produtos/img-cat4.svg" alt="Botas" />
                         </div>
+                        <p>Botas</p>
+                    </div>
 
-                        <div className='categoria'>
-                            <div className='img'>
-                                <img src="/static/images/produtos/img-cat2.svg" alt="Scarpins" />
-                            </div>
-                            <p>Scarpins</p>
+                    <div className='categoria'>
+                        <div className='img'>
+                            <img src="/static/images/produtos/img-cat2.svg" alt="Scarpins" />
                         </div>
+                        <p>Scarpins</p>
+                    </div>
 
-                        <div className='categoria'>
-                            <div className='img'>
-                                <img src="/static/images/produtos/img-cat3.svg" alt="Sapatilhas" />
-                            </div>
-                            <p>Sapatilhas</p>
+                    <div className='categoria'>
+                        <div className='img'>
+                            <img src="/static/images/produtos/img-cat3.svg" alt="Sapatilhas" />
                         </div>
+                        <p>Sapatilhas</p>
+                    </div>
 
-                        <div className='categoria'>
-                            <div className='img'>
-                                <img src="/static/images/produtos/img-cat5.svg" alt="Sandalias" />
-                            </div>
-                            <p>Sandálias</p>
+                    <div className='categoria'>
+                        <div className='img'>
+                            <img src="/static/images/produtos/img-cat5.svg" alt="Sandalias" />
                         </div>
-                    </Slider>
+                        <p>Sandálias</p>
+                    </div>
                 </div>
             </div>
 

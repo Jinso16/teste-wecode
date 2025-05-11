@@ -1629,10 +1629,22 @@ footer {
 
     .div-banner {
       height: 90vh;
+
+      button {
+        transform: unset;
+        left: 4%;
+        bottom: 3%;
+
+        width: unset;
+      }
     }
 
     .slick-dots {
-      top: 90vh;
+      top: 89vh;
+      margin-left: 1vh;
+      left: 82%;
+
+      transform: unset;
     }
   }
 
@@ -1650,30 +1662,25 @@ footer {
 
       .produtos {
 
+        overflow-x: auto;
+
+        justify-content: unset;
+
         .produto {
+
+          gap: unset;
 
           .img-card {
             height: 220px;
-            width: 100%;
-
-            .fav {
-              right: 90px;
-            }
-
-            .vitrine {
-              right: 90px;
-            }
+            width: 220px;
           }
 
           p {
               font-size: 12px;
               max-width: 200px;
-
-              margin-left: 21vw;
             }
 
           .promo {
-            margin-left: 21vw;
 
             h1 {
               font-size: 14px;
@@ -1684,6 +1691,10 @@ footer {
             }
           }
         }
+      }
+
+      .produtos::-webkit-scrollbar {
+        display: none;
       }
     }
   }
@@ -1701,21 +1712,29 @@ footer {
     }
 
     .row-categorias {
+      overflow-x: auto;
+
       width: 100%;
 
       .categoria {
 
+        gap: unset;
+
         width: none;
 
         .img {
-          width: 90%;
-          height: 250px;
+          width: 135px;
+          height: 175px;
         }
 
         p {
           margin: 8px 0;
         }
       }
+    }
+
+    .row-categorias::-webkit-scrollbar {
+      display: none;
     }
   }
 
